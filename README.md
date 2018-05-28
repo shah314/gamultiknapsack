@@ -1,6 +1,6 @@
 <H1>Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
 <i><h3>Shalin Shah</h3></i>
-<P>A genetic algorithm implementation for the multi-constraint knapsack problem. 
+<P>A genetic algorithm implementation for the multidimensional knapsack problem. 
 The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack 
 problem. The 
 multi-constraint knapsack problem has m constraints and one objective function 
