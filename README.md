@@ -9,7 +9,7 @@ is similar to the one described in this paper &quot;<i>A Genetic Algorithm for t
 Knapsack Problem&quot; by Beasley and Chu</i>, but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds
 close to optimum solutions much faster. (Convergence can be controlled using the
 parameters).
-<p>A description of the algorithm (slightly different) can be found in <a href="https://github.com/shah314/hard-knapsack-problems/raw/master/gaknapsack.pdf">my paper</a>.</p>
+<p>A description of the algorithm (slightly different), as applied to the 0/1 knapsack problem, can be found in <a href="https://github.com/shah314/hard-knapsack-problems/raw/master/gaknapsack.pdf">my paper</a>.</p>
 <br><b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
