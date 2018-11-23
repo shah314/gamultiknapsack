@@ -1,16 +1,8 @@
 <H1>Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
 <i><h3>Shalin Shah</h3></i>
-<P>A genetic algorithm implementation for the multidimensional knapsack problem. 
-The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack 
-problem. The 
-multi-constraint knapsack problem has m constraints and one objective function 
-to be maximized while all the m constraints are satisfied.<P>The implementation
-is similar to the one described in this paper &quot;<i>A Genetic Algorithm for the Multiconstraint
-Knapsack Problem&quot; by Beasley and Chu</i>, but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds
-close to optimum solutions much faster. (Convergence can be controlled using the
-parameters).
+<P>A genetic algorithm implementation for the multidimensional knapsack problem. The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack problem. The multi-constraint knapsack problem has m constraints and one objective function to be maximized while all the m constraints are satisfied.<P>The implementation is similar to the one described in this paper "<i>A Genetic Algorithm for the Multiconstraint Knapsack Problem" by Beasley and Chu</i>, but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds close to optimum solutions much faster. (Convergence can be controlled using the parameters).</p>
 <p>A description of the algorithm (slightly different), as applied to the 0/1 knapsack problem, can be found in <a href="https://github.com/shah314/hard-knapsack-problems/raw/master/gaknapsack.pdf">my paper</a>.</p>
-<br><b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
+<b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
