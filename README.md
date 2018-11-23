@@ -355,6 +355,7 @@ instances</a>:</p>
 </div>
 
 <h2>References</h2>
+
 [Ahuja00] “A greedy genetic algorithm for the quadratic assignment problem”, R. Ahuja, J. Orlin, A. Tiwari, Computers and Operations Research, vol. 27, issue 10 (Sept. 2000), 917--934, ACM (2000)
 
 [Angeline95] “Adaptive and self-adaptive evolutionary computations”, P. Angeline, Computational Intelligence: A Dynamic Systems Perspective, IEEE press, 152—163 (1995)
