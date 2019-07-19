@@ -14,7 +14,7 @@ public class GeneticAlgorithm
     public static void main(String [] args) throws Exception
     {
         /* Process the data from the ORLIB_FILE */
-        DataProcessorORLIB.processData();
+        DataProcessorWeing.processData();
         
         /* Find Lagrangian Multipliers for greedy crossover */
         LagrangianRelaxation.calculateLambda();

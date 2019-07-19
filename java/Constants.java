@@ -10,15 +10,15 @@ public class Constants {
     public static int [] CAPACITIES = null; // populated automatically
     public static int NUMBER_CONSTRAINTS = 10; // populated automatically
     public static final String CONSTRAINT_FILE__PREFIX = "constraint";
-    public static String ORLIB_FILE = "D:\\javacode\\gamultiKnapsack\\data\\orlib4.txt";
-    public static String WEING_FILE = "D:\\javacode\\gamultiKnapsack\\data\\WEING8.DAT";
+    public static String ORLIB_FILE = "orlib4.txt";
+    public static String WEING_FILE = "data.DAT";
     public static String DIRECTORY = "D:\\javacode\\gamultiKnapsack\\data\\";
     public static int NUMBER_OBJECTS = 50;// populated automatically
     public static boolean SHOW_WINDOW = true;
     
     /* GA parameters */
     public static int POPULATION = 100;
-    public static int GENERATIONS = 500;
+    public static int GENERATIONS = 2;
     public static double INITIAL_POPULATION_PROBABILITY = 0.9;
     public static int GREEDY_CROSSOVER = 0;
     public static int ONE_POINT_CROSSOVER = 1;
