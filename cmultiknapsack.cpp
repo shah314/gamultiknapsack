@@ -821,7 +821,7 @@ void processDataORLIB()
 		}
 	}
 
-	delete(line);
+	delete[](line);
 }
 
 /* Process the data from the ORLIB file */
@@ -990,7 +990,7 @@ void processDataWEING()
 
    OPTIMUM = atoi(tok);
    
-	delete(line);
+	delete[](line);
 }
 
 /* Mutation */
@@ -1397,7 +1397,6 @@ vector<KNode> crossover(KNode &node1, KNode &node2)
 		exit(1);
 	}
 
-   return NULL;
 }
 
 /* Try to randomly improve upon the passed in KNode, around the greedy neighborhood */
@@ -1577,10 +1576,10 @@ int main(void)
 		for(int m=0; m<count;)
 		{
       	/* Randomly select parents for crossover */
-			vector<KNode> &parents = randomSelection(population);
+			vector<KNode> parents = randomSelection(population);
 
          /* Call adaptive crossover */
-			vector<KNode> &children = crossover(parents[0], parents[1]);
+			vector<KNode> children = crossover(parents[0], parents[1]);
 
          /* Mutation and Local Improvement */
 			if(runtimeCrossoverType == GREEDY_CROSSOVER)
