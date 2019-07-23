@@ -14,11 +14,11 @@ public class Constants {
     public static String WEING_FILE = "data.DAT";
     public static String DIRECTORY = "D:\\javacode\\gamultiKnapsack\\data\\";
     public static int NUMBER_OBJECTS = 50;// populated automatically
-    public static boolean SHOW_WINDOW = true;
+    public static boolean SHOW_WINDOW = false;
     
     /* GA parameters */
     public static int POPULATION = 100;
-    public static int GENERATIONS = 10;
+    public static int GENERATIONS = 1000;
     public static double INITIAL_POPULATION_PROBABILITY = 0.9;
     public static int GREEDY_CROSSOVER = 0;
     public static int ONE_POINT_CROSSOVER = 1;
