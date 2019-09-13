@@ -29,7 +29,7 @@ We use Lagrangian multipliers to augment the utility ratio for the multidimensio
 
 For each object and for each constraint (for that object) the weight (constraint) value is multiplied with the corresponding Lagrangian multiplier the sum of these values is obtained. The value obtained is then divided by the number of constraints. Then, the ratio of the value (profit) and the value obtained in the previous step is obtained which is the profit-weight ratio for that object.
 
-$ratio_i = v_i / ((sum_{j=1}^{m} l_j * w_{ij}) / m)$
+$ratio_i = v_i / ((\sum_{j=1}^{m} l_j * w_{ij}) / m)$
 
 Where m is the number of constraints, $l_j$ is the $j^{th}$ Lagrangian multiplier. The greedy crossover simply takes objects from the two parents in non-increasing order of the ratio and constructs one offspring such that it satisfies all constraints.
 
