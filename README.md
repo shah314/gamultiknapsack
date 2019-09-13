@@ -1,4 +1,4 @@
-<H1>Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
+<H1>GKNAP: Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
 <i><h3>Shalin Shah</h3></i>
 <a href="https://zenodo.org/badge/latestdoi/134312370"><img src="https://zenodo.org/badge/134312370.svg" alt="DOI"></a>
 <br>
