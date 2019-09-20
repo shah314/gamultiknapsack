@@ -7,18 +7,17 @@
 <p>Please see <a href="https://arxiv.org/abs/1908.08022">this paper</a> for a detailed description of the algorithm.</p>
 <b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
 
-Compile the Java code and then run:
 <pre>
+Compile the Java code and then run:
 java GeneticAlgorithm
-</pre>
 
 Compile the C++ code and then run the executable.
-<pre>
 g++ cmultiknapsack.cpp
 ./a.out
-</pre>
 
-The algorithm requires a data.DAT in the current directory. Please remove all comments and other extraneous text from data.DAT.
+The algorithm requires a data.DAT in the current directory. 
+Please remove all comments and other extraneous text from data.DAT.
+</pre>
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
