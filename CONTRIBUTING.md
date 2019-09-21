@@ -9,7 +9,7 @@ These are general guidelines on how to contribute to the code.
 <h3>Code Enhancements</h3>
 <ul>
 <li>Before committing your changes, please see the README in the tests folder</li>
-<li>Beforing committing, please run test.sh (you may have to change the path to the bash binary).
+<li>Beforing committing, please run the test scripts (you may have to change the path to the bash binary).
 <li>Please commit your code enhancements to a new branch every time</li>
 <li>After committing to a new branch, please create a pull request and add @shah314 as a reviewer.</li>
 <li>Once I have reviewed your changes, I will merge the branch to master</li>
