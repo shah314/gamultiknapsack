@@ -28,7 +28,7 @@ public class GeneticAlgorithm
         }
         else if(args[1].equals("orlib"))
         {
-          DataProcessorORLIB.processData(args[0])
+          DataProcessorORLIB.processData(args[0]);
         }
         else
         {
