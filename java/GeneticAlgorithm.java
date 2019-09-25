@@ -32,7 +32,7 @@ public class GeneticAlgorithm
         }
         else
         {
-          System.out.println("Unknown file format. Existing...");
+          System.out.println("Unknown file format. Exiting...");
           System.exit(1);
         }
 
