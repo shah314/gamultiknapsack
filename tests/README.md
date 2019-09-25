@@ -11,6 +11,7 @@ The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastj
 <pre>
  //This is the WEING1.DAT data file plus some comments, that are NOT part of the problem instance.
  
+ 
  2 28 // 2 knapsacks, 28 objects
  1898 440 22507 270 14148 3100 4650 30800 615 4975
  1160 4225 510 11880 479 440 490 330 110 560
