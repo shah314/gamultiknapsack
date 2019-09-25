@@ -19,36 +19,26 @@ The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.
 Any JDK should work fine. If the code does not compile, please open an issue.
 Compile the Java code and then run GeneticAlgorithm.
 
-```
 javac *.java
 java GeneticAlgorithm filename format
-```
 
 (The file name contains the instance in weing or orlib format)
 (The format is either weing or orlib)
 Example: 
-
-```
 java GeneticAlgorithm data.DAT weing
-```
 
 <b>C++ implementation</b>
 The code was tested on a Mac with gcc version 8, downloaded using homebrew. 
 If the code does not compile, please open an issue.
 Compile the C++ code and then run the executable.
 
-```
 g++ cmultiknapsack.cpp
 ./a.out filename format
-```
 
 (The file name contains the instance in weing or orlib format)
 (The format is either weing or orlib)
 Example: 
-
-```
 ./a.out data.DAT weing
-```
 
 (Please remove all comments and other extraneous text from data.DAT)
 (See the tests directory for <b>testcpp.sh and testjava.sh</b> for an example run)
