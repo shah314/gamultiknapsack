@@ -5,21 +5,43 @@ import java.util.*;
  * @author Shalin Shah
  * Email: shah.shalin@gmail.com
  */
-public class GreedyAlgorithm 
+public class GreedyAlgorithm
 {
     public static List greedyObjects = null;
-    
+
     /**
      * Main
      */
     public static void main(String [] args) throws Exception
     {
-        DataProcessorORLIB.processData();
+      if(args.length <= 1)
+      {
+        System.out.println("Usage:");
+        System.out.println("java GreedyAlgorithm <filename> <fileformat weing/orlib>");
+        System.out.println("Example: java GreedyAlgorithm data.DAT weing");
+        System.exit(0);
+      }
+
+      if(args[1].equals("weing"))
+      {
+        /* Process the data from the ORLIB_FILE */
+        DataProcessorWeing.processData(args[0]);
+      }
+      else if(args[1].equals("orlib"))
+      {
+        DataProcessorORLIB.processData(args[0]);
+      }
+      else
+      {
+        System.out.println("Unknown file format. Existing...");
+        System.exit(1);
+      }
+
         LagrangianRelaxation.calculateLambda();
         System.out.println(runGreedyAlgorithm().value());
     }
-    
-    /** 
+
+    /**
      * Run the greedy algorithm.
      */
     public static KNode runGreedyAlgorithm()
@@ -38,7 +60,7 @@ public class GreedyAlgorithm
             CompareObject o = new CompareObject(i, ratio);
             list.add(o);
         }
-        
+
         Collections.sort(list);
         greedyObjects = list;
         Iterator it = list.iterator();
@@ -57,7 +79,7 @@ public class GreedyAlgorithm
         KNode node = new KNode(set, 0, value);
         return node;
     }
-    
+
     /**
      * Used for sorting.
      */
@@ -65,13 +87,13 @@ public class GreedyAlgorithm
     {
         public double ratio;
         public int index;
-        
+
         public CompareObject(int in, double r)
         {
             ratio = r;
             index = in;
         }
-        
+
         public int compareTo(Object obj)
         {
             CompareObject o = (CompareObject)obj;
@@ -84,7 +106,7 @@ public class GreedyAlgorithm
             {
                 return 1;
             }
-            
+
             return 0;
         }
     }
