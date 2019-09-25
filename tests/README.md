@@ -6,7 +6,7 @@ Please run the bash scripts after cloning the repository. You may have to change
 </ul>
 <br>
 Please note that since the code is randomized, it will not find the optimum every time it is run (unless it is run for a very large number of iterations). Also, the data.DAT file is the WEING1 instance.
-<br>
+<br><br>
 The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
 <pre>
  //This is the WEING1.DAT data file plus some comments, that are NOT part of the problem instance.
