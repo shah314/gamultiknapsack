@@ -34,6 +34,7 @@ Email: shah.shalin@gmail.com
 #include <time.h>
 #include <string.h>
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 /* Class used by local Improvement */
