@@ -8,12 +8,24 @@
 <b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
 
 <pre>
+<b>Usage</b>
+The usage of this code base is to just compile the code and run it on the command line.
+The code will output the solution found, the value of the objective function and 
+the chosen items for the knapsack. The code requires a <b>weing</b> formatted file or an <b>orlib</b> formatted file.
+The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>.
+The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>.
+
+<b>Java implementation</b>
+Any JDK should work fine. If the code does not compile, please open an issue.
 Compile the Java code and then run:
 <b>java GeneticAlgorithm filename format</b>
 (The file name contains the instance in weing or orlib format)
 (The format is either weing or orlib)
 Example: <b>java GeneticAlgorithm data.DAT weing</b>
 
+<b>C++ implementation</b>
+The code was tested on a Mac with gcc version 8, downloaded using homebrew. 
+If the code does not compile, please open an issue.
 Compile the C++ code and then run the executable.
 g++ cmultiknapsack.cpp
 <b>./a.out filename format</b>
@@ -23,6 +35,14 @@ Example: <b>./a.out data.DAT weing</b>
 
 (Please remove all comments and other extraneous text from data.DAT)
 (See the tests directory for <b>testcpp.sh and testjava.sh</b> for an example run)
+
+<b>Dependencies</b>
+The code has no other dependencies. A JDK or a gcc compile is all that is required.
+
+<b>Using the code as an API</b>
+IF you want to use the code as an API call from your own code:
+<b>Java:</b> In GeneticAlgorithm.java, please see the main method.
+<b>C++:</b> In the C++ code, please see the main method.
 </pre>
 
 The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
@@ -44,13 +64,7 @@ The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastj
  141278 // optimum value
 </pre>
 
-(The comments are only for the purpose of explaining the format. Please remove all comments before running the algorithm)
-
-<pre>
-IF you want to use the code as an API call from your own code:
-<b>Java:</b> In GeneticAlgorithm.java, please see the main method.
-<b>C++:</b> In the C++ code, please see the main method.
-</pre>
+The comments beginning with "//" are only for the purpose of explaining the format. <b>Please remove all comments before running the algorithm</b>.
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
