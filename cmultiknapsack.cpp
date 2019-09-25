@@ -23,9 +23,10 @@ Author: Shalin Shah
 Email: shah.shalin@gmail.com
 
 ** Requirements **
-	The program requires an ORLIB or WEING formatted files in the current directory.
-   Change the file name in processDataORLIB() or processDataWeing() functions.
-
+	The program requires an ORLIB or WEING formatted files passed in as arguments.
+	Usage: ./a.out <filename> <fileformat>
+	(The file format is either weing or orlib)
+	Example: ./a.out data.DAT weing
 */
 
 #include <stdio.h>
