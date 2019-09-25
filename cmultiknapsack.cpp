@@ -3,8 +3,8 @@
 Genetic Algorithm - 0/1 Multi-Constraint Knapsack Problem (Multi-Dimensional)
 -----------------------------------------------------------------------------
 
-A genetic algorithm implementation for the multi-constraint knapsack problem. 
-The multi-constraint knapsack problem is a generalization of the 0/1 knapsack problem. The 0/1 
+A genetic algorithm implementation for the multi-constraint knapsack problem.
+The multi-constraint knapsack problem is a generalization of the 0/1 knapsack problem. The 0/1
 knapsack problem has one weight constraint. The multi-constraint knapsack problem has m constraints
 and one objective function to be maximized while all the m constraints are satisfied.
 This makes it much harder to solve as compared to the 0/1 knapsack problem.
@@ -98,17 +98,17 @@ int * VALUES;  // populated automatically by processDataORLIB
 const int POPULATION = 10; // size of the population
 const int LOCAL_IMPROVEMENT = 10; // number of local improvements
 const double INITIAL_POPULATION_PROB = 0.9; // the probability with which the initial population is generated
-const int GENERATIONS = 100000; // number of generations to run the algorithm
+const int GENERATIONS = 100; // number of generations to run the algorithm
 const int GREEDY_CROSSOVER = 1; // a constant to identify greedy crossover in adaptive crossover
 const int ONE_POINT_CROSSOVER = 0; // a constant to identify one point crossover in adaptive crossover
 const int NEGATIVE_FITNESS = -100; // the fitness of an invalid individual (violating constraints)
-const int SHUFFLE_TOLERANCE = 2; // the number of attempts to identify unique parents before shuffling
+const int SHUFFLE_TOLERANCE = 100000; // the number of attempts to identify unique parents before shuffling
 double MUTATION_PROBABILITY;	// populated in main()
 double MUTATION_INCREMENT;	// populated in main()
 double SHUFFLE_PROBABILITY;	// populated in main()
 double MAX_MUTATION_PROBABILITY;	// populated in main()
 int runtimeCrossoverType; // populated by adaptive crossover to identify which crossover operation was performed
-const int MAX_UNIQUE_ITERATIONS = 10000; // maximum iterations to spend on finding objects in local improvement
+const int MAX_UNIQUE_ITERATIONS = 10; // maximum iterations to spend on finding objects in local improvement
 
 /* A list of objects sorted in non-increasing order of the lagrangian psuedo-utility ratio.
 Used by localImprovement() */
@@ -679,10 +679,10 @@ vector<KNode> generateRandomPopulation()
 }
 
 /* Process the data from the ORLIB file */
-void processDataORLIB()
+void processDataORLIB(char * filename)
 {
 	FILE * file;
-	file = fopen("orlib1.txt", "r");
+	file = fopen(filename, "r");
    if(file == NULL)
    {
    	printf("orlib1.txt File Not Found in Current Directory.");
@@ -701,7 +701,7 @@ void processDataORLIB()
 	//printf("%d\n", NUMBER_CONSTRAINTS);
 	//printf("%d\n", OPTIMUM);
 	int i = 0;
-	
+
 	/* VALUES (objective function) */
 	VALUES = new int[NUMBER_OBJECTS];
 	fgets(line, 1000, file);
@@ -783,7 +783,7 @@ void processDataORLIB()
 			}
 		}
 	}
-	
+
 
 	/* CAPACITIES */
 	CAPACITIES = new int[NUMBER_CONSTRAINTS];
@@ -827,10 +827,10 @@ void processDataORLIB()
 }
 
 /* Process the data from the ORLIB file */
-void processDataWEING()
+void processDataWEING(char * filename)
 {
 	FILE * file;
-	file = fopen("data.DAT", "r");
+	file = fopen(filename, "r");
    if(file == NULL)
    {
    	printf("Data File Not Found in Current Directory.");
@@ -843,7 +843,7 @@ void processDataWEING()
 	tok = strtok(NULL, " \t");
 	NUMBER_OBJECTS = atoi(tok);
 	int i = 0;
-	
+
 	/* VALUES (objective function) */
 	VALUES = new int[NUMBER_OBJECTS];
 	fgets(line, 1000, file);
@@ -991,7 +991,7 @@ void processDataWEING()
    }
 
    OPTIMUM = atoi(tok);
-   
+
 	delete[](line);
 }
 
@@ -1054,7 +1054,7 @@ inline vector<KNode> randomSelection(vector<KNode> &population)
       node2.~KNode();
 		node1 = population[rand1];
 		node2 = population[rand2];
-		if(node1.nodeValue() != node2.nodeValue())
+		//if(node1.nodeValue() != node2.nodeValue())
 		{
       	parents.push_back(node1);
          parents.push_back(node2);
@@ -1093,7 +1093,7 @@ inline vector<KNode> onePointCrossover(KNode &n1, KNode &n2)
 		knap1[i] = v1;
 		knap2[i] = v2;
 	}
-	
+
 	vector<KNode> children;
 
 	KNode node1(knap1);
@@ -1218,7 +1218,7 @@ inline vector<KNode> greedyCrossover(KNode &n1, KNode &n2)
 			obj.ratio = ratio;
 
 			vec.push_back(obj);
-		
+
 			count++;
 		}
 		else if(n2.getValueOfIndex(i)==1)
@@ -1233,20 +1233,20 @@ inline vector<KNode> greedyCrossover(KNode &n1, KNode &n2)
 			CompareObject obj;
 			obj.index = i;
 			obj.ratio = ratio;
-			
+
 			vec.push_back(obj);
-			
+
 			count++;
-		}	
+		}
 	}
 
 	CompareObject * arr = new CompareObject[count];
-	
+
 	for(i=0; i<count; i++)
 	{
 		arr[i] = vec[i];
 	}
-	
+
 	qsort(arr, count, sizeof(CompareObject), compareObjects);
 
 	int * kk = new int[NUMBER_OBJECTS];
@@ -1287,7 +1287,7 @@ inline vector<KNode> greedyCrossover(KNode &n1, KNode &n2)
 	delete [] arr;
    delete [] kk;
    vec.erase(vec.begin(), vec.end());
-   
+
 	vector<KNode> childd;
 	childd.push_back(node);
 	return childd;
@@ -1323,7 +1323,7 @@ vector<KNode> crossover(KNode &node1, KNode &node2)
 			children[0].crossoverType = randomCrossover();
 			node1.crossoverType = randomCrossover();
 		}
-		
+
 		if(children[0].nodeFitness() > node2.nodeFitness())
 		{
 			// successful crossover
@@ -1365,7 +1365,7 @@ vector<KNode> crossover(KNode &node1, KNode &node2)
 	else if(type == GREEDY_CROSSOVER)
 	{
 		vector<KNode> children = greedyCrossover(node1, node2);
-		
+
 		if(children[0].nodeFitness() > node1.nodeFitness())
 		{
 			// successful crossover
@@ -1377,7 +1377,7 @@ vector<KNode> crossover(KNode &node1, KNode &node2)
 			children[0].crossoverType = randomCrossover();
 			node1.crossoverType = randomCrossover();
 		}
-		
+
 		if(children[0].nodeFitness() > node2.nodeFitness())
 		{
 			// successful crossover
@@ -1392,7 +1392,7 @@ vector<KNode> crossover(KNode &node1, KNode &node2)
 
 		return children;
 	}
-	else 
+	else
 	{
    	// Should never happen
 		printf("Could Not Identify Crossover Type %d", type);
@@ -1406,7 +1406,7 @@ inline void localImprovement(KNode &n)
 {
 	if(n.violatesConstraints())
    	return;
-   
+
 	KNode best(n);
    KNode node(n);
    KNode prev(n);
@@ -1480,7 +1480,7 @@ void greedyAlgorithm(void)
       {
       	ww = 1;
       }
-      
+
       double ratio = (double)value / ww;
       GreedyObject obj(ratio, i);
       GREEDY_OBJECTS.push_back(obj);
@@ -1490,19 +1490,44 @@ void greedyAlgorithm(void)
 }
 
 /* Main */
-int main(void)
+int main(int argc, char **argv)
 {
+  if(argc <= 2)
+  {
+    printf("Usage: ./a.out <datafile> <weing/orlib>\n");
+    printf("Examples:\n");
+    printf("./a.out data.DAT weing\n\n");
+    exit(0);
+  }
+
+  if(strcmp(argv[2], "weing") == 0)
+  {
+    printf("Data file format: weing\n");
+    printf("Data file name: %s\n", argv[1]);
+    /* Process the data in the ORLIB/WEING-WEISH-SENTO format */
+    processDataWEING(argv[1]);
+  }
+  else if(strcmp(argv[2], "orlib") == 0)
+  {
+    printf("Data file format: orlib\n");
+    printf("Data file name: %s\n", argv[1]);
+    /* Process the data in the ORLIB/WEING-WEISH-SENTO format */
+    processDataORLIB(argv[1]);
+  }
+  else
+  {
+    printf("Unknown file format. Exiting...\n");
+    exit(1);
+  }
+
 	/* Initialize the random number generator */
 	srand(time(NULL));
-
-   /* Process the data in the ORLIB/WEING-WEISH-SENTO format */
-	processDataWEING();
 
    /* Calculate the approximate lagrangian multipliers for the pseudo-utility ratio */
    calculateLagrangianMultipliers();
 
    /* Set the mutation probabilities */
-	SHUFFLE_PROBABILITY = (double)20 / (double)NUMBER_OBJECTS;
+	SHUFFLE_PROBABILITY = (double)10 / (double)NUMBER_OBJECTS;
 	MUTATION_PROBABILITY = (double)1 / (double)NUMBER_OBJECTS;
 	MUTATION_INCREMENT = (double)1 / (double)NUMBER_OBJECTS;
 	MAX_MUTATION_PROBABILITY = (double)10 / (double)NUMBER_OBJECTS;
@@ -1546,7 +1571,7 @@ int main(void)
       printf("%d:%d\n", i, gBest.nodeFitness());
       if(gBest.nodeFitness() == OPTIMUM)
 		{
-			printf("Optimum Found - %d\n", newPopulation[0].nodeFitness());
+			printf("Optimum Found!\n");
 			break;
 		}
 
@@ -1616,11 +1641,11 @@ int main(void)
             localImprovement(children[1]);
 				newPopulation.push_back(children[1]);
 				n++;
-				
+
 			}
 			else
 			{
-         	// Should Never Happen	
+         	// Should Never Happen
 				printf("Unknown runtime Crossover Type");
 				exit(1);
 			}
@@ -1630,10 +1655,21 @@ int main(void)
 		population.swap(newPopulation);
       newPopulation.erase(newPopulation.begin(), newPopulation.end());
 	}
+  printf("Solution Objective Function: %d\n", gBest.nodeFitness());
+  printf("Objects chosen:\n");
+
+  for(int i=0; i<NUMBER_OBJECTS; i++)
+  {
+   if(gBest.getValueOfIndex(i) == 1)
+     {
+       printf("%d ", i);
+     }
+  }
+  printf("\n\n");
 
    population.erase(population.begin(), population.end());
    GREEDY_OBJECTS.erase(GREEDY_OBJECTS.begin(), GREEDY_OBJECTS.end());
-   
+
    delete [] CAPACITIES;
    delete [] VALUES;
    delete [] SOLUTION;
