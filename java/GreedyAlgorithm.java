@@ -33,7 +33,7 @@ public class GreedyAlgorithm
       }
       else
       {
-        System.out.println("Unknown file format. Existing...");
+        System.out.println("Unknown file format. Exiting...");
         System.exit(1);
       }
 
