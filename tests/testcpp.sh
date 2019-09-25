@@ -4,7 +4,7 @@ cd testing1
 cp ../../*.cpp .
 cp ../data.DAT .
 g++ *.cpp
-./a.out
+./a.out data.DAT weing
 cd ..
 rm testing1/*.cpp
 rm testing1/*.out
