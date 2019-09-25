@@ -44,7 +44,7 @@ Example:
 (See the tests directory for <b>testcpp.sh and testjava.sh</b> for an example run)
 
 <b>Dependencies</b>
-The code has no other dependencies. A JDK or a gcc compile is all that is required.
+The code has no other dependencies. A JDK or a gcc compiler is all that is required.
 
 <b>Using the code as an API</b>
 IF you want to use the code as an API call from your own code:
