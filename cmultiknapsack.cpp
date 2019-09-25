@@ -32,7 +32,8 @@ Email: shah.shalin@gmail.com
 #include <vector>
 #include <algorithm>
 #include <time.h>
-
+#include <string.h>
+#include <iostream>
 using namespace std;
 
 /* Class used by local Improvement */
