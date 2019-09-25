@@ -22,7 +22,7 @@ g++ cmultiknapsack.cpp
 Example: <b>./a.out data.DAT weing</b>
 
 (Please remove all comments and other extraneous text from data.DAT)
-(See the tests directory for testcpp.sh and testjava.sh for an example run)
+(See the tests directory for <b>testcpp.sh and testjava.sh</b> for an example run)
 </pre>
 
 The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
@@ -45,6 +45,12 @@ The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastj
 </pre>
 
 (The comments are only for the purpose of explaining the format. Please remove all comments before running the algorithm)
+
+<pre>
+IF you want to use the code as an API call from your own code:
+<b>Java:</b> In GeneticAlgorithm.java, please see the main method.
+<b>C++:</b> In the C++ code, please see the main method.
+</pre>
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
