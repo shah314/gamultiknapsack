@@ -65,6 +65,17 @@ public class GeneticAlgorithm
         {
             System.out.println("Weight" + (i+1) + ": " + weights[i]);
         }
+
+        System.out.println("Objects chosen:");
+        for(int i=0; i < Constants.NUMBER_OBJECTS; i++)
+        {
+          if(gBest.getKnapsackContents().get(i))
+          {
+            System.out.print(i + " ");
+          }
+        }
+
+        System.out.println("");
     }
 
     /**
