@@ -1,10 +1,50 @@
-<H1>Java - Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
+<H1>GKNAP: Genetic Algorithm - 0/1 Multi-Constraint (Multidimensional) Knapsack Problem</H1>
 <i><h3>Shalin Shah</h3></i>
 <a href="https://zenodo.org/badge/latestdoi/134312370"><img src="https://zenodo.org/badge/134312370.svg" alt="DOI"></a>
 <br>
 <P>A genetic algorithm implementation for the multidimensional knapsack problem. The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack problem. The multi-constraint knapsack problem has m constraints and one objective function to be maximized while all the m constraints are satisfied.<P>The implementation is similar to the one described in [Chu98], but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds close to optimum solutions much faster. (Convergence can be controlled using the parameters).</p>
-<p>A description of the algorithm (slightly different), as applied to the 0/1 knapsack problem, can be found in <a href="https://arxiv.org/abs/1903.03494">my paper</a>.</p>
+<p><b>There is a C++ and a Java implementation. The Java implementation is the preferred way of using the algorithm.</b></p>
+<p>Please see <a href="https://arxiv.org/abs/1908.08022">this paper</a> for a detailed description of the algorithm.</p>
 <b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
+
+<pre>
+Compile the Java code and then run:
+<b>java GeneticAlgorithm filename format</b>
+(The file name contains the instance in weing or orlib format)
+(The format is either weing or orlib)
+Example: <b>java GeneticAlgorithm data.DAT weing</b>
+
+Compile the C++ code and then run the executable.
+g++ cmultiknapsack.cpp
+<b>./a.out filename format</b>
+(The file name contains the instance in weing or orlib format)
+(The format is either weing or orlib)
+Example: <b>./a.out data.DAT weing</b>
+
+(Please remove all comments and other extraneous text from data.DAT)
+(See the tests directory for testcpp.sh and testjava.sh for an example run)
+</pre>
+
+The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
+<pre>
+ //This is the WEING1.DAT data file plus some comments, that are NOT part of the problem instance.
+ 
+ 2 28 // 2 knapsacks, 28 objects
+ 1898 440 22507 270 14148 3100 4650 30800 615 4975
+ 1160 4225 510 11880 479 440 490 330 110 560
+ 24355 2885 11748 4550 750 3720 1950 10500 // 28 weights
+ 600 600 // 2 knapsack capacities
+ 45 0 85 150 65 95 30 0 170 0
+ 40 25 20 0 0 25 0 0 25 0
+ 165 0 85 0 0 0 0 100 // #1 constr.
+ 30 20 125 5 80 25 35 73 12 15
+ 15 40 5 10 10 12 10 9 0 20
+ 60 40 50 36 49 40 19 150 // #2 constr.
+ 
+ 141278 // optimum value
+</pre>
+
+(The comments are only for the purpose of explaining the format. Please remove all comments before running the algorithm)
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
