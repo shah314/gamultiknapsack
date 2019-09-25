@@ -6,35 +6,55 @@ import java.io.*;
  * @author Shalin Shah
  * Email: shah.shalin@gmail.com
  */
-public class GeneticAlgorithm 
-{    
+public class GeneticAlgorithm
+{
     /**
      * Main
      */
     public static void main(String [] args) throws Exception
     {
-        /* Process the data from the ORLIB_FILE */
-        DataProcessorWeing.processData();
-        
+        if(args.length <= 1)
+        {
+          System.out.println("Usage:");
+          System.out.println("java GeneticAlgorithm <filename> <fileformat weing/orlib>");
+          System.out.println("Example: java GeneticAlgorithm data.DAT weing");
+          System.exit(0);
+        }
+
+        if(args[1].equals("weing"))
+        {
+          /* Process the data from the ORLIB_FILE */
+          DataProcessorWeing.processData(args[0]);
+        }
+        else if(args[1].equals("orlib"))
+        {
+          DataProcessorORLIB.processData(args[0])
+        }
+        else
+        {
+          System.out.println("Unknown file format. Existing...");
+          System.exit(1);
+        }
+
         /* Find Lagrangian Multipliers for greedy crossover */
         LagrangianRelaxation.calculateLambda();
-        
+
         /* The greedy algorithm */
         KNode greedy = GreedyAlgorithm.runGreedyAlgorithm();
         System.out.println("Greedy Solution: " + greedy.fitness());
-        
+
         /* Generate the initial population */
         List population = PopulationGenerator.generateRandomPopulation();
-        
+
         /* Update mutation rates */
         Constants.MUTATION_PROBABILITY = (double)1 / (double)Constants.NUMBER_OBJECTS;;
         Constants.MUTATION_INCREMENT = (double)1 / (double)Constants.NUMBER_OBJECTS;
         Constants.MAX_MUTATION_PROBABILITY = (double)20 / (double)Constants.NUMBER_OBJECTS;
         Constants.SHUFFLE_PROBABILITY = (double)20 / (double)Constants.NUMBER_OBJECTS;
-        
+
         /* Run the genetic algorithm */
         population = runGeneticAlgorithm(population);
-        
+
         /* Output the global best individual */
         Collections.sort(population);
         KNode gBest = (KNode)population.iterator().next();
@@ -46,7 +66,7 @@ public class GeneticAlgorithm
             System.out.println("Weight" + (i+1) + ": " + weights[i]);
         }
     }
-    
+
     /**
      * Run the genetic algorithm.
      */
@@ -56,18 +76,18 @@ public class GeneticAlgorithm
         KNode gBest = null;
         KNode oldBest = null;
         AlgorithmWindow window = null;
-        
+
         if(Constants.SHOW_WINDOW)
             window = new AlgorithmWindow();
-        
+
         for(int i=0; i<Constants.GENERATIONS; i++)
         {
             Collections.sort(population);
             List newPopulation = new ArrayList();
-            
+
             if(Constants.SHOW_WINDOW)
                 window.show(population, i);
-            
+
             /* Elitism */
             Iterator it = population.iterator();
             gBest = (KNode)it.next();
@@ -75,7 +95,7 @@ public class GeneticAlgorithm
             {
                 if(Constants.SHOW_WINDOW)
                     window.done();
-                
+
                 Constants.OPTIMUM_FOUND = true;
                 return population;
             }
@@ -83,9 +103,9 @@ public class GeneticAlgorithm
             {
                 oldBest = gBest;
             }
-            
+
             newPopulation.add(gBest);
-            
+
             /* Crossover and Mutation */
             for(int j=0; j<Constants.POPULATION;)
             {
@@ -112,18 +132,18 @@ public class GeneticAlgorithm
                     newPopulation.add(children[1]);
                 }
             }
-            
+
             population = newPopulation;
             Mutator.updateMutationRate(oldBest, gBest);
             oldBest = gBest;
-            
+
             long end = System.currentTimeMillis();
             if((end-start) > Constants.MAX_TIME)
             {
                 return population;
             }
         }
-        
+
         return population;
     }
 }

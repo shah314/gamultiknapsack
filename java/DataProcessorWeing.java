@@ -7,14 +7,14 @@ import java.io.*;
  * @author Shalin Shah
  * Email: shah.shalin@gmail.com
  */
-public class DataProcessorWeing 
+public class DataProcessorWeing
 {
-    /** 
+    /**
      * Process the data from the file specified by the constant ORLIB_FILE in Constants.java
      */
-    public static void processData() throws Exception
+    public static void processData(String filename) throws Exception
     {
-        File file = new File(Constants.WEING_FILE);
+        File file = new File(filename);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String numOBJ = reader.readLine();
         StringTokenizer token = new StringTokenizer(numOBJ, " \t");
@@ -46,12 +46,12 @@ public class DataProcessorWeing
                 break;
             }
         }
-        
+
         String capacities = reader.readLine();
         token = new StringTokenizer(capacities, " \t");
         Constants.CAPACITIES = new int[Constants.NUMBER_CONSTRAINTS];
         i=0;
-        
+
         while(true)
         {
             while(token.hasMoreTokens())
@@ -59,7 +59,7 @@ public class DataProcessorWeing
                 Constants.CAPACITIES[i] = Integer.parseInt(token.nextToken().trim());
                 i++;
             }
-            
+
             if(i < Constants.NUMBER_CONSTRAINTS)
             {
                 capacities = reader.readLine();
@@ -70,7 +70,7 @@ public class DataProcessorWeing
                 break;
             }
         }
-        
+
         Constants.CONSTRAINTS = new int[Constants.NUMBER_CONSTRAINTS][Constants.NUMBER_OBJECTS];
         for(i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
@@ -89,8 +89,8 @@ public class DataProcessorWeing
                     }
                     Constants.CONSTRAINTS[i][j] = Integer.parseInt(ss);
                     j++;
-                }   
-                
+                }
+
                 if(j < Constants.NUMBER_OBJECTS)
                 {
                     constraint = reader.readLine();
