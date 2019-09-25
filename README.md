@@ -47,7 +47,7 @@ Example:
 The code has no other dependencies. A JDK or a gcc compiler is all that is required.
 
 <b>Using the code as an API</b>
-IF you want to use the code as an API call from your own code:
+If you want to use the code as an API call from your own code:
 <b>Java:</b> In GeneticAlgorithm.java, please see the main method.
 <b>C++:</b> In the C++ code, please see the main method.
 </pre>
