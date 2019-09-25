@@ -9,14 +9,20 @@
 
 <pre>
 Compile the Java code and then run:
-java GeneticAlgorithm
+<b>java GeneticAlgorithm filename format</b>
+(The file name contains the instance in weing or orlib format)
+(The format is either weing or orlib)
+Example: <b>java GeneticAlgorithm data.DAT weing</b>
 
 Compile the C++ code and then run the executable.
 g++ cmultiknapsack.cpp
-./a.out
+<b>./a.out filename format</b>
+(The file name contains the instance in weing or orlib format)
+(The format is either weing or orlib)
+Example: <b>./a.out data.DAT weing</b>
 
-The algorithm requires a data.DAT in the current directory. 
-Please remove all comments and other extraneous text from data.DAT.
+(Please remove all comments and other extraneous text from data.DAT)
+(See the tests directory for testcpp.sh and testjava.sh for an example run)
 </pre>
 
 The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
