@@ -16,7 +16,7 @@ The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.
 The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>.
 
 <b>Java implementation</b>
-Any JDK should work fine. If the code does not compile, please open an issue.
+I tested the code using JDK 1.8, but any JDK should work fine. If the code does not compile, please open an issue.
 Compile the Java code and then run GeneticAlgorithm.
 
 javac *.java
