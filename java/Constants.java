@@ -35,10 +35,10 @@ public class Constants {
 
     /* Lagrangian Relaxation Parameters */
     public static double INITIAL_LAMBDA = 0;
-    public static double INITIAL_INCREMENT = 0.1;
-    public static double LAMBDA_TOLERANCE = 0.001;
+    public static double INITIAL_INCREMENT = 0.01;
+    public static double LAMBDA_TOLERANCE = 0.00000001;
     public static int COUNT_TOLERANCE = 100;
-    public static int DIFF_TOLERANCE = 25;
+    public static int DIFF_TOLERANCE = 2;
 
     /* Local Improvement */
     public static int NUMBER_OF_TIMES = 10;
