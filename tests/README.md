@@ -16,6 +16,8 @@ The orlib formatted files are available <a href="http://people.brunel.ac.uk/~mas
 Please note that these files contain multiple instances, so to run the algorithm, 
 please use any <b>one</b> of the instances.
 
+<b>The format of all files is described <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>.</b>
+
 The distributions of the files are quite different between orlib and weing. 
 If the algorithm is stuck, please increase Constants.DIFF_TOLERANCE on line 31 of GeneticAlgorithm.java.
 </pre>
