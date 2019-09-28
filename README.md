@@ -20,6 +20,8 @@ please use any <b>one</b> of the instances.
 The distributions of the files are quite different between orlib and weing. 
 If the algorithm is stuck, please increase Constants.DIFF_TOLERANCE on line 31 of GeneticAlgorithm.java.
 
+<b>The format of all files is described <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>
+
 <b>Java implementation</b>
 I tested the code using JDK 1.8, but any JDK should work fine. 
 If the code does not compile, please open an issue. 
