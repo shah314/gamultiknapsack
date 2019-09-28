@@ -7,7 +7,17 @@ Please run the bash scripts after cloning the repository. You may have to change
 <br>
 Please note that since the code is randomized, it will not find the optimum every time it is run (unless it is run for a very large number of iterations). The data.DAT file is the WEING1 instance. If the code gets stuck in a solution which is not the optimum for a very long time, please terminate it and re-run.
 <br><br>
-The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:<br><br>
+<pre>
+The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>.
+The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a> (used by P.C.Chu and J.E.Beasley).
+The orlib formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/">here</a> which are named mknapcb1.txt, mknapcb2.txt and so on.
+Please note that these files contain multiple instances, so to run the algorithm, 
+please use any <b>one</b> of the instances.
+
+The distributions of the files are quite different between orlib and weing. 
+If the algorithm is stuck, please increase Constants.DIFF_TOLERANCE on line 31 of GeneticAlgorithm.java.
+</pre>
+<br><br>
 <pre>
  //This is the WEING1.DAT data file plus some comments, that are NOT part of the problem instance.
  
