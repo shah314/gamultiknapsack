@@ -12,7 +12,7 @@ The usage of this code base is to just compile the code and run it on the comman
 The code will output the solution found, the value of the objective function and 
 the chosen items for the knapsack. The code requires a <b>weing</b> formatted file or an <b>orlib</b> formatted file.
 The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>.
-The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>.
+The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a> (used by P.C.Chu and J.E.Beasley).
 
 <b>Java implementation</b>
 I tested the code using JDK 1.8, but any JDK should work fine. If the code does not compile, please open an issue.
