@@ -4,7 +4,7 @@
  * Email: shah.shalin@gmail.com
  */
 public class Constants {
-      
+
     public static int [] VALUES = null; // populated automatically
     public static int [][] CONSTRAINTS = null; // populated automatically
     public static int [] CAPACITIES = null; // populated automatically
@@ -15,7 +15,7 @@ public class Constants {
     public static String DIRECTORY = "D:\\javacode\\gamultiKnapsack\\data\\";
     public static int NUMBER_OBJECTS = 50;// populated automatically
     public static boolean SHOW_WINDOW = false;
-    
+
     /* GA parameters */
     public static int POPULATION = 100;
     public static int GENERATIONS = 10;
@@ -32,14 +32,14 @@ public class Constants {
     public static double SHUFFLE_PROBABILITY; // populated automatically
     public static int GBEST; // populated automatically
     public static int MAX_TIME = 60 * 1000;
-    
+
     /* Lagrangian Relaxation Parameters */
     public static double INITIAL_LAMBDA = 0;
     public static double INITIAL_INCREMENT = 0.1;
     public static double LAMBDA_TOLERANCE = 0.001;
-    public static final int COUNT_TOLERANCE = 100;
-    public static final int DIFF_TOLERANCE = 25;
-    
+    public static int COUNT_TOLERANCE = 100;
+    public static int DIFF_TOLERANCE = 25;
+
     /* Local Improvement */
     public static int NUMBER_OF_TIMES = 10;
     public static int REMOVE = 5;

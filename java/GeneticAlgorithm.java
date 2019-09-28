@@ -28,6 +28,7 @@ public class GeneticAlgorithm
         }
         else if(args[1].equals("orlib"))
         {
+          Constants.DIFF_TOLERANCE = 5000;
           DataProcessorORLIB.processData(args[0]);
         }
         else
@@ -36,8 +37,10 @@ public class GeneticAlgorithm
           System.exit(1);
         }
 
+        System.out.println("Calculating Lambdas...");
         /* Find Lagrangian Multipliers for greedy crossover */
         LagrangianRelaxation.calculateLambda();
+        System.out.println("Finished");
 
         /* The greedy algorithm */
         KNode greedy = GreedyAlgorithm.runGreedyAlgorithm();
