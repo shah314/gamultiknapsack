@@ -13,6 +13,9 @@ The code will output the solution found, the value of the objective function and
 the chosen items for the knapsack. The code requires a <b>weing</b> formatted file or an <b>orlib</b> formatted file.
 The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>.
 The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a> (used by P.C.Chu and J.E.Beasley).
+The orlib formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/">here</a> which are named mknapcb1.txt, mknapcb2.txt and so on.
+Please note that these files contain multiple instances, so to run the algorithm, 
+please use any <b>one</b> of the instances.
 
 <b>Java implementation</b>
 I tested the code using JDK 1.8, but any JDK should work fine. If the code does not compile, please open an issue.
