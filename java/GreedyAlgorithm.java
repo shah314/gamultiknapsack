@@ -29,6 +29,7 @@ public class GreedyAlgorithm
       }
       else if(args[1].equals("orlib"))
       {
+        Constants.DIFF_TOLERANCE = 5000;
         DataProcessorORLIB.processData(args[0]);
       }
       else
