@@ -3,26 +3,62 @@
 <a href="https://zenodo.org/badge/latestdoi/134312370"><img src="https://zenodo.org/badge/134312370.svg" alt="DOI"></a>
 <br>
 <P>A genetic algorithm implementation for the multidimensional knapsack problem. The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack problem. The multi-constraint knapsack problem has m constraints and one objective function to be maximized while all the m constraints are satisfied.<P>The implementation is similar to the one described in [Chu98], but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds close to optimum solutions much faster. (Convergence can be controlled using the parameters).</p>
-<p><b>There is a C++ and a Java implementation. The Java implementation is the preferred way of using the algorithm.</b></p>
 <p>Please see <a href="https://arxiv.org/abs/1908.08022">this paper</a> for a detailed description of the algorithm.</p>
 <b>Cited By:</b><ul><li>Jovanovic, Dragana, "Solution of multidimensional problems by application of genetic algorithm" (2012).</li><li>Yoon, Yourim, Yong-Hyuk Kim, and Byung-Ro Moon. "A theoretical and empirical investigation on the Lagrangian capacities of the 0-1 multidimensional knapsack problem." European Journal of Operational Research 218.2 (2012): 366-376.</li></ul></li>
 
 <pre>
-Compile the Java code and then run:
-<b>java GeneticAlgorithm filename format</b>
-(The file name contains the instance in weing or orlib format)
-(The format is either weing or orlib)
-Example: <b>java GeneticAlgorithm data.DAT weing</b>
+<b>Usage</b>
+The usage of this code base is to just compile the code and run it on the command line.
+The code will output the solution found, the value of the objective function and 
+the chosen items for the knapsack. The code requires a <b>weing</b> formatted file or an <b>orlib</b> formatted file.
+The <b>weing</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>.
+The <b>orlib</b> formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a> (used by P.C.Chu and J.E.Beasley).
+The orlib formatted files are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/">here</a> which are named mknapcb1.txt, mknapcb2.txt and so on.
+Please note that these files contain multiple instances, so to run the algorithm, 
+please use any <b>one</b> of the instances.
 
-Compile the C++ code and then run the executable.
-g++ cmultiknapsack.cpp
-<b>./a.out filename format</b>
+The distributions of the files are quite different between orlib and weing. 
+If the algorithm is stuck, please increase Constants.DIFF_TOLERANCE on line 31 of GeneticAlgorithm.java.
+
+<b>The format of all files is described <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html">here</a>.</b>
+
+<b>Java implementation</b>
+I tested the code using JDK 1.8, but any JDK should work fine. 
+If the code does not compile, please open an issue. 
+
+Compile the Java code and then run GeneticAlgorithm.
+
+javac *.java
+java GeneticAlgorithm filename format
+
 (The file name contains the instance in weing or orlib format)
 (The format is either weing or orlib)
-Example: <b>./a.out data.DAT weing</b>
+Example: 
+java GeneticAlgorithm data.DAT weing
+
+<b>C++ implementation</b>
+The code was tested on a Mac with gcc version 8, downloaded using homebrew. 
+If the code does not compile, please open an issue.
+Compile the C++ code and then run the executable.
+
+g++ cmultiknapsack.cpp
+./a.out filename format
+
+(The file name contains the instance in weing or orlib format)
+(The format is either weing or orlib)
+Example: 
+./a.out data.DAT weing
 
 (Please remove all comments and other extraneous text from data.DAT)
-(See the tests directory for testcpp.sh and testjava.sh for an example run)
+(See the tests directory for <b>testcpp.sh and testjava.sh</b> for an example run)
+
+<b>Dependencies</b>
+The code has no other dependencies. A JDK or a gcc compiler is all that is required.
+
+<b>Using the code as an API</b>
+If you want to use the code as an API call from your own code:
+<b>Java:</b> In GeneticAlgorithm.java, please see the main method.
+<b>C++:</b> In the C++ code, please see the main method.
 </pre>
 
 The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">here</a>. They have the following format:
@@ -44,7 +80,7 @@ The benchmark instances are available <a href="http://people.brunel.ac.uk/~mastj
  141278 // optimum value
 </pre>
 
-(The comments are only for the purpose of explaining the format. Please remove all comments before running the algorithm)
+The comments beginning with "//" are only for the purpose of explaining the format. <b>Please remove all comments before running the algorithm</b>.
 
 <p>The algorithm was run on a few <a href="http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt">benchmark
 instances</a>:</p>
