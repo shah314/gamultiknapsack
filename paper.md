@@ -31,7 +31,7 @@ For each object and for each constraint (for that object) the weight (constraint
 
 $ratio_i = v_i / ((\sum_{j=1}^{m} l_j * w_{ij}) / m)$
 
-where m is the number of constraints, $l_j$ is the $j^{th}$ Lagrangian multiplier. The greedy crossover simply takes objects from the two parents in non-increasing order of the ratio and constructs one offspring such that it satisfies all constraints.
+where m is the number of constraints, and $l_j$ is the $j^{th}$ Lagrangian multiplier. The greedy crossover simply takes objects from the two parents in non-increasing order of the ratio and constructs one offspring such that it satisfies all constraints.
 
 Our method, as applied to the 0/1 knapsack problem, is similar to the algorithm described in [@shah2019genetic]. We use techniques like simulated annealing [@kirkpatrick1983optimization] in our work to handle constraints. More details on constraint handling techniques is presented in [@coello2002theoretical]. We generate the initial population with a probability of 0.5. More on this is given in [@hill1999monte].
 
