@@ -1,5 +1,9 @@
-<h1>Contributing to the graph coloring code</h1>
+<h1>Contributing to the code</h1>
 These are general guidelines on how to contribute to the code.
+<h3>Support</h3>
+<ul>
+<li>For any needed help or support, please open an issue.</li>
+</ul>
 <h3>Bugs and Issues</h3>
 <ul>
 <li>If while running the code you find that it has an issue, please report it to the issues page.</li>
