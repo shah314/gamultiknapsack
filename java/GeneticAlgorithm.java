@@ -23,7 +23,7 @@ public class GeneticAlgorithm
 
         if(args[1].equals("weing"))
         {
-          /* Process the data from the ORLIB_FILE */
+          /* Process the data from the WEING_FILE */
           DataProcessorWeing.processData(args[0]);
         }
         else if(args[1].equals("orlib"))
