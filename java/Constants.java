@@ -42,5 +42,5 @@ public class Constants {
 
     /* Local Improvement */
     public static int NUMBER_OF_TIMES = 10;
-    public static int REMOVE = 5;
+    public static int REMOVE = 1;
 }
