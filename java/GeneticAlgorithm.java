@@ -48,6 +48,7 @@ public class GeneticAlgorithm
 
         /* Generate the initial population */
         List population = PopulationGenerator.generateRandomPopulation();
+	population.add(greedy);
 
         /* Update mutation rates */
         Constants.MUTATION_PROBABILITY = (double)1 / (double)Constants.NUMBER_OBJECTS;;
@@ -105,7 +106,7 @@ public class GeneticAlgorithm
             /* Elitism */
             Iterator it = population.iterator();
             gBest = (KNode)it.next();
-            if(gBest.fitness() == Constants.OPTIMUM)
+            if(gBest.fitness() >= Constants.OPTIMUM)
             {
                 if(Constants.SHOW_WINDOW)
                     window.done();

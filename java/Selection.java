@@ -17,20 +17,6 @@ public class Selection
         KNode node1 = (KNode)population.get(rand1);
         KNode node2 = (KNode)population.get(rand2);
         int count = 0;
-        while(node1.getKnapsackContents().equals(node2.getKnapsackContents()))
-        {
-            rand1 = (int)(Math.random()*population.size());
-            rand2 = (int)(Math.random()*population.size());
-            node1 = (KNode)population.get(rand1);
-            node2 = (KNode)population.get(rand2);
-            count++;
-            if(count > Constants.SHUFFLE_TOLERANCE)
-            {
-                shuffle(population);
-                count=0;
-            }
-        }
-        
         return new KNode[]{node1, node2};
     }
     

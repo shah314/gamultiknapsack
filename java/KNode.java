@@ -101,7 +101,7 @@ public class KNode implements Comparable
         
         for(int i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
-            int weight = Constants.CONSTRAINTS[i][index];
+            double weight = Constants.CONSTRAINTS[i][index];
             weights[i]+=weight;
         }
         
@@ -119,7 +119,7 @@ public class KNode implements Comparable
         
         for(int i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
-            int weight = Constants.CONSTRAINTS[i][in];
+            double weight = Constants.CONSTRAINTS[i][in];
             weights[i]+=weight;
         }
         
@@ -141,7 +141,7 @@ public class KNode implements Comparable
         
         for(int i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
-            int weight = Constants.CONSTRAINTS[i][in];
+            double weight = Constants.CONSTRAINTS[i][in];
             weights[i]-=weight;
         }
         

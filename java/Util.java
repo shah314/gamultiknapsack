@@ -74,7 +74,7 @@ public class Util {
             {
                 for(int j=0; j<Constants.NUMBER_CONSTRAINTS; j++)
                 {
-                    int weight = Constants.CONSTRAINTS[j][i];
+                    double weight = Constants.CONSTRAINTS[j][i];
                     weights[j]+=weight;
                 }
             }

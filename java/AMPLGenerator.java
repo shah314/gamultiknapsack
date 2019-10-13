@@ -33,7 +33,7 @@ public class AMPLGenerator
 
         for(int i=0; i<Constants.NUMBER_OBJECTS-1; i++)
         {
-            int value = Constants.VALUES[i];
+            double value = Constants.VALUES[i];
             s = "X" + i + " * " + value + " + ";
             writer.write(s);
         }
@@ -47,7 +47,7 @@ public class AMPLGenerator
             writer.write(s);
             for(int j=0; j<Constants.NUMBER_OBJECTS-1; j++)
             {
-                int weight = Constants.CONSTRAINTS[i][j];
+                double weight = Constants.CONSTRAINTS[i][j];
                 s = "X" + j + " * " + weight + " + ";
                 writer.write(s);
             }

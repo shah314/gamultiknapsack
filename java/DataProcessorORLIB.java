@@ -20,16 +20,16 @@ public class DataProcessorORLIB
         StringTokenizer token = new StringTokenizer(numOBJ, " ");
         Constants.NUMBER_OBJECTS = Integer.parseInt(token.nextToken());
         Constants.NUMBER_CONSTRAINTS = Integer.parseInt(token.nextToken());
-        Constants.OPTIMUM = Integer.parseInt(token.nextToken());
+        Constants.OPTIMUM = Double.parseDouble(token.nextToken());
         String profits = reader.readLine();
         token = new StringTokenizer(profits, " ");
         int i=0;
-        Constants.VALUES = new int[Constants.NUMBER_OBJECTS];
+        Constants.VALUES = new double[Constants.NUMBER_OBJECTS];
         while(true)
         {
             while(token.hasMoreTokens())
             {
-                Constants.VALUES[i] = Integer.parseInt(token.nextToken().trim());
+                Constants.VALUES[i] = Double.parseDouble(token.nextToken().trim());
                 i++;
             }
             if(i < Constants.NUMBER_OBJECTS)
@@ -43,18 +43,18 @@ public class DataProcessorORLIB
             }
         }
 
-        Constants.CONSTRAINTS = new int[Constants.NUMBER_CONSTRAINTS][Constants.NUMBER_OBJECTS];
+        Constants.CONSTRAINTS = new double[Constants.NUMBER_CONSTRAINTS][Constants.NUMBER_OBJECTS];
         for(i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
             String constraint = reader.readLine();
             token = new StringTokenizer(constraint, " ");
-            Constants.CONSTRAINTS[i] = new int[Constants.NUMBER_OBJECTS];
+            Constants.CONSTRAINTS[i] = new double[Constants.NUMBER_OBJECTS];
             int j=0;
             while(true)
             {
                 while(token.hasMoreTokens())
                 {
-                    Constants.CONSTRAINTS[i][j] = Integer.parseInt(token.nextToken().trim());
+                    Constants.CONSTRAINTS[i][j] = Double.parseDouble(token.nextToken().trim());
                     j++;
                 }
 
@@ -72,14 +72,14 @@ public class DataProcessorORLIB
 
         String capacities = reader.readLine();
         token = new StringTokenizer(capacities, " ");
-        Constants.CAPACITIES = new int[Constants.NUMBER_CONSTRAINTS];
+        Constants.CAPACITIES = new double[Constants.NUMBER_CONSTRAINTS];
         i=0;
 
         while(true)
         {
             while(token.hasMoreTokens())
             {
-                Constants.CAPACITIES[i] = Integer.parseInt(token.nextToken().trim());
+                Constants.CAPACITIES[i] = Double.parseDouble(token.nextToken().trim());
                 i++;
             }
 

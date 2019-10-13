@@ -23,7 +23,7 @@ public class DataProcessorWeing
         String profits = reader.readLine();
         token = new StringTokenizer(profits, " \t");
         int i=0;
-        Constants.VALUES = new int[Constants.NUMBER_OBJECTS];
+        Constants.VALUES = new double[Constants.NUMBER_OBJECTS];
         while(true)
         {
             while(token.hasMoreTokens())
@@ -33,7 +33,7 @@ public class DataProcessorWeing
                 {
                     continue;
                 }
-                Constants.VALUES[i] = Integer.parseInt(ss);
+                Constants.VALUES[i] = Double.parseDouble(ss);
                 i++;
             }
             if(i < Constants.NUMBER_OBJECTS)
@@ -49,14 +49,14 @@ public class DataProcessorWeing
 
         String capacities = reader.readLine();
         token = new StringTokenizer(capacities, " \t");
-        Constants.CAPACITIES = new int[Constants.NUMBER_CONSTRAINTS];
+        Constants.CAPACITIES = new double[Constants.NUMBER_CONSTRAINTS];
         i=0;
 
         while(true)
         {
             while(token.hasMoreTokens())
             {
-                Constants.CAPACITIES[i] = Integer.parseInt(token.nextToken().trim());
+                Constants.CAPACITIES[i] = Double.parseDouble(token.nextToken().trim());
                 i++;
             }
 
@@ -71,12 +71,12 @@ public class DataProcessorWeing
             }
         }
 
-        Constants.CONSTRAINTS = new int[Constants.NUMBER_CONSTRAINTS][Constants.NUMBER_OBJECTS];
+        Constants.CONSTRAINTS = new double[Constants.NUMBER_CONSTRAINTS][Constants.NUMBER_OBJECTS];
         for(i=0; i<Constants.NUMBER_CONSTRAINTS; i++)
         {
             String constraint = reader.readLine();
             token = new StringTokenizer(constraint, " \t");
-            Constants.CONSTRAINTS[i] = new int[Constants.NUMBER_OBJECTS];
+            Constants.CONSTRAINTS[i] = new double[Constants.NUMBER_OBJECTS];
             int j=0;
             while(true)
             {
@@ -87,7 +87,7 @@ public class DataProcessorWeing
                     {
                         continue;
                     }
-                    Constants.CONSTRAINTS[i][j] = Integer.parseInt(ss);
+                    Constants.CONSTRAINTS[i][j] = Double.parseDouble(ss);
                     j++;
                 }
 
@@ -112,7 +112,7 @@ public class DataProcessorWeing
             else
             {
                 opt = opt.trim();
-                Constants.OPTIMUM = Integer.parseInt(opt);
+                Constants.OPTIMUM = Double.parseDouble(opt);
                 break;
             }
         }
