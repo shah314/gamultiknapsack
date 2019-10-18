@@ -37,6 +37,4 @@ Our method, as applied to the 0/1 knapsack problem, is similar to the algorithm 
 
 Traditional evolutionary algorithms are more suitable for problems in which domain specific knowledge is not available. For problems with partial knowledge of the domain, a genetic algorithm, which uses this domain knowledge, is more likely to succeed, as the results clearly indicate. A good search algorithm should be global in nature with a heuristic introduced to give constructive direction to the algorithm. We introduced a new technique of greedy crossover; it forms the core of our genetic algorithm. As the table on the git page shows, our algorithm is able to solve to optimality, all of the instances in a short amount of time. Some problems like Weing7 are harder. Future work could be to run the algorithm on larger instances for which optimum solutions are available. Our algorithm is trivially parallelizable and future work could be to implement the algorithm on Apache Spark or Map-Reduce.
 
-The Java and C++ code are available here: <https://github.com/shah314/gamultiknapsack>. The problem instances are available here: <http://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap2.txt>.
-
 # References
