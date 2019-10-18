@@ -1,5 +1,8 @@
 <H1>GKNAP: A Java and C++ package for solving the multidimensional knapsack problem</H1>
 <i><h3>Shalin Shah</h3></i>
+<a style="border-width:0" href="https://doi.org/10.21105/joss.01756">
+  <img src="https://joss.theoj.org/papers/10.21105/joss.01756/status.svg" alt="DOI badge" >
+</a>
 <a href="https://zenodo.org/badge/latestdoi/134312370"><img src="https://zenodo.org/badge/134312370.svg" alt="DOI"></a>
 <br>
 <P>A genetic algorithm implementation for the multidimensional knapsack problem. The multi-constraint (or multidimensional) knapsack problem is a generalization of the 0/1 knapsack problem. The multi-constraint knapsack problem has m constraints and one objective function to be maximized while all the m constraints are satisfied.<P>The implementation is similar to the one described in [Chu98], but its <i>significantly different</i>. It uses Lagrangian multipliers as constraint weights and compared to the paper, it finds close to optimum solutions much faster. (Convergence can be controlled using the parameters).</p>
